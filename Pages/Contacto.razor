@@ -1,0 +1,152 @@
+@page "/contacto"
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject ISnackbar Snackbar
+
+<PageTitle>Contacto</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.False" Class="contact-page">
+
+    <MudText Typo="Typo.body2" Class="contact-eyebrow">
+        Hablemos
+    </MudText>
+
+    <MudText Typo="Typo.h2" Class="contact-title">
+        Contáctame
+    </MudText>
+
+    <MudText Typo="Typo.body1" Class="contact-subtitle">
+        ¿Tienes un proyecto en mente? Escríbeme y conversemos sobre cómo darle forma.
+    </MudText>
+
+    <div class="contact-info-row">
+
+        <div class="contact-info-item">
+            <MudIcon Icon="@Icons.Material.Filled.Email" Class="contact-icon" />
+            <div>
+                <MudText Typo="Typo.body2" Class="contact-label">Correo</MudText>
+                <a href="mailto:edifarqpa@hotmail.com" class="contact-link">
+                    <MudText Typo="Typo.h6" Class="contact-value">edifarqpa@hotmail.com</MudText>
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-info-item">
+            <MudIcon Icon="@Icons.Custom.Brands.WhatsApp" Class="contact-icon" />
+            <div>
+                <MudText Typo="Typo.body2" Class="contact-label">WhatsApp</MudText>
+                <a href="https://wa.me/50762245928" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <MudText Typo="Typo.h6" Class="contact-value">6224-5928</MudText>
+                </a>
+                <a href="https://wa.me/50763821628" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <MudText Typo="Typo.h6" Class="contact-value">6382-1628</MudText>
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-info-item">
+            <MudIcon Icon="@Icons.Material.Filled.LocationOn" Class="contact-icon" />
+            <div>
+                <MudText Typo="Typo.body2" Class="contact-label">Ubicación</MudText>
+                <MudText Typo="Typo.h6" Class="contact-value">Provincia de Panamá, Panamá</MudText>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="contact-form-section">
+
+        <MudText Typo="Typo.h3" Class="contact-form-title">Envíame un mensaje</MudText>
+
+        <MudForm @ref="_form" Model="_model" Class="contact-form">
+
+            <MudGrid>
+                <MudItem xs="12" md="6">
+                    <MudTextField @bind-Value="_model.Nombre" Label="Nombre" Variant="Variant.Outlined" Required="true" />
+                </MudItem>
+
+                <MudItem xs="12" md="6">
+                    <MudTextField @bind-Value="_model.Email" Label="Correo" Variant="Variant.Outlined" InputType="InputType.Email" Required="true" />
+                </MudItem>
+
+                <MudItem xs="12">
+                    <MudTextField @bind-Value="_model.Mensaje" Label="Mensaje" Variant="Variant.Outlined" Lines="5" Required="true" />
+                </MudItem>
+            </MudGrid>
+
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Size="Size.Large"
+                       Class="mt-6"
+                       DisableElevation="true"
+                       Disabled="_enviando"
+                       OnClick="EnviarMensaje">
+                @(_enviando ? "Enviando..." : "Enviar mensaje")
+            </MudButton>
+
+        </MudForm>
+
+    </div>
+
+</MudContainer>
+
+@code {
+    private const string Web3FormsAccessKey = "f0a49883-f830-4f00-9d10-f1d1a0e6f673";
+
+    private MudForm _form = null!;
+    private ContactoModel _model = new();
+    private bool _enviando = false;
+
+    private async Task EnviarMensaje()
+    {
+        await _form.ValidateAsync();
+        if (!_form.IsValid) return;
+
+        _enviando = true;
+
+        try
+        {
+            var response = await Http.PostAsJsonAsync("https://api.web3forms.com/submit", new
+            {
+                access_key = Web3FormsAccessKey,
+                subject = "Nuevo mensaje desde el portafolio",
+                name = _model.Nombre,
+                email = _model.Email,
+                message = _model.Mensaje
+            });
+
+            var result = await response.Content.ReadFromJsonAsync<Web3FormsResponse>();
+
+            if (response.IsSuccessStatusCode && result?.Success == true)
+            {
+                Snackbar.Add("¡Mensaje enviado! Te contactaré pronto.", Severity.Success);
+                await _form.ResetAsync();
+            }
+            else
+            {
+                Snackbar.Add("No se pudo enviar el mensaje. Intenta de nuevo o escríbeme por WhatsApp.", Severity.Error);
+            }
+        }
+        catch
+        {
+            Snackbar.Add("No se pudo enviar el mensaje. Revisa tu conexión e intenta de nuevo.", Severity.Error);
+        }
+        finally
+        {
+            _enviando = false;
+        }
+    }
+
+    private class ContactoModel
+    {
+        public string Nombre { get; set; } = "";
+        public string Email { get; set; } = "";
+        public string Mensaje { get; set; } = "";
+    }
+
+    private class Web3FormsResponse
+    {
+        public bool Success { get; set; }
+        public string? Message { get; set; }
+    }
+}

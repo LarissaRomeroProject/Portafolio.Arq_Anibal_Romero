@@ -125,36 +125,68 @@ code {
 
 .hero-content {
     max-width: 560px;
+    min-width: 0;
+}
+
+.hero-eyebrow {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--mud-palette-secondary);
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .hero-title {
     margin-bottom: 24px;
-    line-height: 1.15;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .hero-description {
     max-width: 500px;
-    line-height: 1.8;
     margin-bottom: 36px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 16px;
+    align-items: center;
+    gap: 24px;
     flex-wrap: wrap;
+}
+
+.hero-link-button {
+    letter-spacing: 0.06em;
+}
+
+.hero-image-col {
+    border-left: 1px solid var(--mud-palette-divider);
+    padding-left: 48px;
+}
+
+.hero-image-wrap {
+    position: relative;
 }
 
 .hero-image {
     width: 100%;
     height: 650px;
     object-fit: cover;
-    box-shadow: 0 16px 40px rgba(0,0,0,.12);
-    transition: transform .35s ease;
+    display: block;
 }
 
-    .hero-image:hover {
-        transform: scale(1.02);
-    }
+.hero-image-caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(33, 30, 28, 0.8);
+    color: #FAF9F7;
+    padding: 12px 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
 
 @media(max-width:960px) {
 
@@ -162,6 +194,11 @@ code {
         min-height: auto;
         padding-top: 40px;
         padding-bottom: 40px;
+    }
+
+    .hero-image-col {
+        border-left: none;
+        padding-left: 0;
     }
 
     .hero-content {
@@ -176,100 +213,5 @@ code {
     .hero-image {
         margin-top: 40px;
         height: 380px;
-    }
-}
-/* ===========================
-   APPBAR
-=========================== */
-
-::deep .mud-appbar {
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 12px rgba(0,0,0,.05);
-    border-bottom: 1px solid rgba(0,0,0,.08);
-    height: 78px;
-    padding-inline: 20px;
-}
-
-/* ===========================
-   TITULO
-=========================== */
-
-.appbar-title {
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-/* ===========================
-   DRAWER
-=========================== */
-
-::deep .mud-drawer {
-    width: 270px;
-    box-shadow: 4px 0 20px rgba(0,0,0,.05);
-}
-
-/* ===========================
-   MENU
-=========================== */
-
-.drawer-nav {
-    padding: 24px 16px;
-}
-
-/* ===========================
-   LINKS
-=========================== */
-
-::deep .mud-nav-link {
-    height: 58px;
-    border-radius: 16px;
-    margin-bottom: 10px;
-    padding-left: 18px;
-    transition: background .25s, transform .25s;
-}
-
-    ::deep .mud-nav-link:hover {
-        transform: translateX(5px);
-    }
-
-    ::deep .mud-nav-link.active {
-        font-weight: bold;
-    }
-
-    /* ===========================
-   ICONOS
-=========================== */
-
-    ::deep .mud-nav-link .mud-icon-root {
-        margin-right: 16px;
-        font-size: 1.3rem;
-    }
-
-/* ===========================
-   CONTENIDO
-=========================== */
-
-::deep .mud-main-content {
-    padding: 32px;
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:900px) {
-
-    .appbar-title {
-        font-size: 1.25rem;
-        letter-spacing: 1px;
-    }
-
-    ::deep .mud-drawer {
-        width: 240px;
-    }
-
-    ::deep .mud-main-content {
-        padding: 20px;
     }
 }

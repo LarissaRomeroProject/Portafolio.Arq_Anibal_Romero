@@ -8,7 +8,11 @@
 
             <div class="hero-content">
 
-                <MudText Typo="Typo.h2" Class="hero-title">
+                <MudText Typo="Typo.body2" Class="hero-eyebrow">
+                    Arquitectura &amp; Diseño
+                </MudText>
+
+                <MudText Typo="Typo.h1" Class="hero-title">
                     Diseño Arquitectónico Moderno
                 </MudText>
 
@@ -19,16 +23,18 @@
 
                 <div class="hero-buttons">
 
-                    <MudButton Href="/proyecto" Variant="Variant.Filled"
+                    <MudButton Href="/proyectos" Variant="Variant.Filled"
                                Color="Color.Primary"
-                               Size="Size.Large">
+                               Size="Size.Large"
+                               DisableElevation="true">
                         Ver proyectos
                     </MudButton>
 
-                    <MudButton Href="/contacto" Variant="Variant.Outlined"
+                    <MudButton Href="/contacto" Variant="Variant.Text"
                                Color="Color.Primary"
-                               Size="Size.Large">
-                        Contactar
+                               Size="Size.Large"
+                               Class="hero-link-button">
+                        Contactar &nbsp;→
                     </MudButton>
 
                 </div>
@@ -37,11 +43,19 @@
 
         </MudItem>
 
-        <MudItem xs="12" md="6">
+        <MudItem xs="12" md="6" Class="hero-image-col">
 
-            <img src="images/arquitectura.jpeg"
-                 alt="Proyecto arquitectónico"
-                 class="hero-image" />
+            <div class="hero-image-wrap">
+
+                <img src="images/arquitectura.jpeg"
+                     alt="Proyecto arquitectónico"
+                     class="hero-image" />
+
+                <span class="hero-image-caption">
+                    Diseño residencial contemporáneo
+                </span>
+
+            </div>
 
         </MudItem>
 

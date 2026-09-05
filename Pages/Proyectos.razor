@@ -1,8 +1,12 @@
-﻿@page "/proyectos"
+@page "/proyectos"
 
 <PageTitle>Proyectos</PageTitle>
 
 <MudContainer MaxWidth="MaxWidth.False" Class="projects-page">
+
+    <MudText Typo="Typo.body2" Class="projects-eyebrow">
+        Portafolio
+    </MudText>
 
     <MudText Typo="Typo.h2" Class="projects-title">
         Proyectos Destacados
@@ -12,102 +16,88 @@
         Una selección de proyectos arquitectónicos modernos y funcionales.
     </MudText>
 
-    <MudGrid Class="mt-8">
+    <div class="project-list">
 
-        <!-- Proyecto 1 -->
-        <MudItem xs="12" md="6" lg="4">
-            <MudPaper Class="project-card">
-
-                <img src="images/proyecto1.png" class="project-image" />
-
-                <div class="project-content">
-                    <MudText Typo="Typo.h5" Class="project-name">
-                        Casa Moderna
-                    </MudText>
-
-                    <MudText Typo="Typo.body2" Class="project-description">
-                        Diseño contemporáneo con espacios abiertos e iluminación natural.
-                    </MudText>
+        <div class="project-row">
+            <div class="project-media">
+                <img src="images/proyecto1.png" alt="Casa Moderna" />
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-index">01</span>
+                    <span class="project-category">Residencial</span>
                 </div>
+                <MudText Typo="Typo.h3" Class="project-name">Casa Moderna</MudText>
+                <MudText Typo="Typo.body1" Class="project-description">
+                    Diseño contemporáneo con espacios abiertos e iluminación natural.
+                </MudText>
+            </div>
+        </div>
 
-            </MudPaper>
-        </MudItem>
-
-        <!-- Proyecto 2 -->
-        <MudItem xs="12" md="6" lg="4">
-            <MudPaper Class="project-card">
-
-                <img src="images/proyecto2.png" class="project-image" />
-
-                <div class="project-content">
-                    <MudText Typo="Typo.h5" Class="project-name">
-                        Residencia Minimalista
-                    </MudText>
-
-                    <MudText Typo="Typo.body2" Class="project-description">
-                        Arquitectura elegante enfocada en simplicidad y armonía.
-                    </MudText>
+        <div class="project-row reverse">
+            <div class="project-media">
+                <img src="images/proyecto2.png" alt="Residencia Minimalista" />
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-index">02</span>
+                    <span class="project-category">Residencial</span>
                 </div>
+                <MudText Typo="Typo.h3" Class="project-name">Residencia Minimalista</MudText>
+                <MudText Typo="Typo.body1" Class="project-description">
+                    Arquitectura elegante enfocada en simplicidad y armonía.
+                </MudText>
+            </div>
+        </div>
 
-            </MudPaper>
-        </MudItem>
-
-        <!-- Proyecto 3 -->
-        <MudItem xs="12" md="6" lg="4">
-            <MudPaper Class="project-card">
-
-                <img src="images/proyecto3.png" class="project-image" />
-
-                <div class="project-content">
-                    <MudText Typo="Typo.h5" Class="project-name">
-                        Diseño Urbano
-                    </MudText>
-
-                    <MudText Typo="Typo.body2" Class="project-description">
-                        Integración moderna entre funcionalidad y estética urbana.
-                    </MudText>
+        <div class="project-row">
+            <div class="project-media">
+                <img src="images/proyecto3.png" alt="Diseño Urbano" />
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-index">03</span>
+                    <span class="project-category">Urbano</span>
                 </div>
+                <MudText Typo="Typo.h3" Class="project-name">Diseño Urbano</MudText>
+                <MudText Typo="Typo.body1" Class="project-description">
+                    Integración moderna entre funcionalidad y estética urbana.
+                </MudText>
+            </div>
+        </div>
 
-            </MudPaper>
-        </MudItem>
-
-        <!-- Proyecto 4 -->
-        <MudItem xs="12" md="6" lg="4">
-            <MudPaper Class="project-card">
-
-                <img src="images/proyecto4.png" class="project-image" />
-
-                <div class="project-content">
-                    <MudText Typo="Typo.h5" Class="project-name">
-                        Diseño Urbano
-                    </MudText>
-
-                    <MudText Typo="Typo.body2" Class="project-description">
-                        Integración moderna entre funcionalidad y estética urbana.
-                    </MudText>
+        <div class="project-row reverse">
+            <div class="project-media">
+                <img src="images/proyecto4.png" alt="Loft Industrial" />
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-index">04</span>
+                    <span class="project-category">Comercial</span>
                 </div>
+                <MudText Typo="Typo.h3" Class="project-name">Loft Industrial</MudText>
+                <MudText Typo="Typo.body1" Class="project-description">
+                    Materiales crudos y estructuras expuestas para un estilo urbano contemporáneo.
+                </MudText>
+            </div>
+        </div>
 
-            </MudPaper>
-        </MudItem>
-        
-        <!-- Proyecto 5 -->
-        <MudItem xs="12" md="6" lg="4">
-            <MudPaper Class="project-card">
-
-                <img src="images/proyecto5.png" class="project-image" />
-
-                <div class="project-content">
-                    <MudText Typo="Typo.h5" Class="project-name">
-                        Diseño Urbano
-                    </MudText>
-
-                    <MudText Typo="Typo.body2" Class="project-description">
-                        Integración moderna entre funcionalidad y estética urbana.
-                    </MudText>
+        <div class="project-row">
+            <div class="project-media">
+                <img src="images/proyecto5.png" alt="Villa Contemporánea" />
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-index">05</span>
+                    <span class="project-category">Residencial</span>
                 </div>
+                <MudText Typo="Typo.h3" Class="project-name">Villa Contemporánea</MudText>
+                <MudText Typo="Typo.body1" Class="project-description">
+                    Volúmenes limpios y grandes ventanales que integran el espacio con el entorno natural.
+                </MudText>
+            </div>
+        </div>
 
-            </MudPaper>
-        </MudItem>
-    </MudGrid>
+    </div>
 
 </MudContainer>

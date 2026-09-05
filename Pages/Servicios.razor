@@ -1,4 +1,89 @@
-﻿@page "/servicios"
+@page "/servicios"
 
 <PageTitle>Servicios</PageTitle>
 
+<MudContainer MaxWidth="MaxWidth.False" Class="services-page">
+
+    <MudText Typo="Typo.body2" Class="services-eyebrow">
+        Qué hacemos
+    </MudText>
+
+    <MudText Typo="Typo.h2" Class="services-title">
+        Nuestros Servicios
+    </MudText>
+
+    <MudText Typo="Typo.body1" Class="services-subtitle">
+        Acompañamos cada proyecto desde el concepto hasta la entrega final.
+    </MudText>
+
+    <div class="service-list">
+
+        <div class="service-row">
+            <span class="service-index">01</span>
+            <div class="service-body">
+                <MudText Typo="Typo.h3" Class="service-name">Diseño Arquitectónico</MudText>
+                <MudText Typo="Typo.body1" Class="service-description">
+                    Proyectos residenciales y comerciales a medida, desde el anteproyecto hasta los planos ejecutivos.
+                </MudText>
+            </div>
+            <MudIcon Icon="@Icons.Material.Filled.Architecture" Class="service-icon" />
+        </div>
+
+        <div class="service-row">
+            <span class="service-index">02</span>
+            <div class="service-body">
+                <MudText Typo="Typo.h3" Class="service-name">Diseño de Interiores</MudText>
+                <MudText Typo="Typo.body1" Class="service-description">
+                    Espacios interiores funcionales y estéticos, con selección de materiales, mobiliario e iluminación.
+                </MudText>
+            </div>
+            <MudIcon Icon="@Icons.Material.Filled.DesignServices" Class="service-icon" />
+        </div>
+
+        <div class="service-row">
+            <span class="service-index">03</span>
+            <div class="service-body">
+                <MudText Typo="Typo.h3" Class="service-name">Remodelaciones</MudText>
+                <MudText Typo="Typo.body1" Class="service-description">
+                    Renovación y ampliación de espacios existentes, optimizando distribución y aprovechamiento de luz.
+                </MudText>
+            </div>
+            <MudIcon Icon="@Icons.Material.Filled.Build" Class="service-icon" />
+        </div>
+
+        <div class="service-row">
+            <span class="service-index">04</span>
+            <div class="service-body">
+                <MudText Typo="Typo.h3" Class="service-name">Supervisión de Obra</MudText>
+                <MudText Typo="Typo.body1" Class="service-description">
+                    Seguimiento técnico de la construcción para asegurar fidelidad al diseño y control de calidad.
+                </MudText>
+            </div>
+            <MudIcon Icon="@Icons.Material.Filled.Engineering" Class="service-icon" />
+        </div>
+
+        <div class="service-row">
+            <span class="service-index">05</span>
+            <div class="service-body">
+                <MudText Typo="Typo.h3" Class="service-name">Planos y Permisos</MudText>
+                <MudText Typo="Typo.body1" Class="service-description">
+                    Elaboración de planos técnicos y gestión de trámites y permisos ante entidades municipales.
+                </MudText>
+            </div>
+            <MudIcon Icon="@Icons.Material.Filled.Description" Class="service-icon" />
+        </div>
+
+        <div class="service-row">
+            <span class="service-index">06</span>
+            <div class="service-body">
+                <MudText Typo="Typo.h3" Class="service-name">Consultoría</MudText>
+                <MudText Typo="Typo.body1" Class="service-description">
+                    Asesoría en viabilidad, presupuesto y toma de decisiones para nuevos proyectos.
+                </MudText>
+            </div>
+            <MudIcon Icon="@Icons.Material.Filled.Handshake" Class="service-icon" />
+        </div>
+
+    </div>
+
+</MudContainer>

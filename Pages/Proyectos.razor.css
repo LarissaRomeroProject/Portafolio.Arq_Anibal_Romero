@@ -1,50 +1,104 @@
 .projects-page {
     padding-top: 3rem;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
+}
+
+.projects-eyebrow {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--mud-palette-secondary);
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
 .projects-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .projects-subtitle {
-    opacity: 0.75;
+    color: var(--mud-palette-text-secondary);
     max-width: 600px;
     font-size: 1.1rem;
 }
 
-.project-card {
-    overflow: hidden;
-    border-radius: 24px;
-    transition: all 0.3s ease;
-    background: #1A1A1A;
+.project-list {
+    margin-top: 4rem;
 }
 
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--mud-palette-divider);
+}
+
+    .project-row.reverse {
+        flex-direction: row-reverse;
     }
 
-.project-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+.project-media {
+    flex: 1 1 55%;
+    overflow: hidden;
 }
 
-.project-content {
-    padding: 1.5rem;
+    .project-media img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        display: block;
+        transition: transform .5s ease;
+    }
+
+.project-row:hover .project-media img {
+    transform: scale(1.03);
+}
+
+.project-info {
+    flex: 1 1 45%;
+    position: relative;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.project-index {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--mud-palette-secondary);
+    letter-spacing: 0.1em;
+}
+
+.project-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mud-palette-text-secondary);
+    padding-left: 12px;
+    border-left: 1px solid var(--mud-palette-divider);
 }
 
 .project-name {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .project-description {
-    opacity: 0.7;
-    line-height: 1.7;
+    color: var(--mud-palette-text-secondary);
+    max-width: 420px;
+}
+
+@media(max-width: 900px) {
+
+    .project-row, .project-row.reverse {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding: 2.5rem 0;
+    }
 }

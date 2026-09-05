@@ -15,51 +15,64 @@
                        Color="Color.Dark"
                        OnClick="DrawerToggle" />
 
-        @* <MudSpacer /> *@
-
-        <MudText Color="Color.Dark" Typo =" Typo.h5">
-            <b>ARQ. ANIBAL ROMERO</b>
+        <MudText Color="Color.Dark" Typo="Typo.h6" Class="appbar-title">
+            ARQ. ANIBAL ROMERO
         </MudText>
 
         <MudSpacer />
 
+        <MudButton Href="/contacto"
+                   Variant="Variant.Text"
+                   Color="Color.Primary"
+                   Class="appbar-cta">
+            Contáctame
+        </MudButton>
+
     </MudAppBar>
-    
+
     <MudDrawer @bind-Open="_drawerOpen"
                Variant="DrawerVariant.Responsive"
                Anchor="Anchor.Start"
+               Width="300px"
                Elevation="0">
-        
-        <MudNavMenu Class="drawer-nav" Style="top:70px">
-            <MudText Typo="Typo.h5" Class="px-4"></MudText>
-            
-            <MudNavLink  Href="/"
-                        Match="NavLinkMatch.All"
-                        Icon="@Icons.Material.Filled.Home">
-                Inicio
-            </MudNavLink>
 
-            <MudNavLink Href="/proyectos"
-                        Icon="@Icons.Material.Filled.Architecture">
-                Proyectos
-            </MudNavLink>
+        <div class="drawer-flex">
 
-            <MudNavLink Href="/sobre-mi"
-                        Icon="@Icons.Material.Filled.Person">
-                Sobre mí
-            </MudNavLink>
+            <MudNavMenu Class="drawer-nav">
 
-            <MudNavLink Href="/servicios"
-                        Icon="@Icons.Material.Filled.DesignServices">
-                Servicios
-            </MudNavLink>
+                <MudNavLink Href="/" Match="NavLinkMatch.All">
+                    Inicio
+                </MudNavLink>
 
-            <MudNavLink Href="/contacto"
-                        Icon="@Icons.Material.Filled.Mail">
-                Contacto
-            </MudNavLink>
+                <MudNavLink Href="/proyectos">
+                    Proyectos
+                </MudNavLink>
 
-        </MudNavMenu>
+                <MudNavLink Href="/sobre-mi">
+                    Sobre mí
+                </MudNavLink>
+
+                <MudNavLink Href="/servicios">
+                    Servicios
+                </MudNavLink>
+
+                <MudNavLink Href="/contacto">
+                    Contacto
+                </MudNavLink>
+
+            </MudNavMenu>
+
+            <div class="drawer-footer">
+                <a href="https://www.instagram.com/edifarq_pa/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="drawer-footer-link">
+                    <MudIcon Icon="@Icons.Custom.Brands.Instagram" />
+                    <span>@@edifarq_pa</span>
+                </a>
+            </div>
+
+        </div>
 
     </MudDrawer>
 
