@@ -42,9 +42,9 @@ namespace Portafolio.Arq_Anibal_Romero.Themes
                 {
                     FontFamily = new[] { "Poppins", "sans-serif" },
                     FontWeight = "700",
-                    FontSize = "clamp(2.75rem, 6vw, 5.5rem)",
-                    LineHeight = "1.02",
-                    LetterSpacing = "-0.03em"
+                    FontSize = "clamp(2.5rem, 5vw, 4rem)",
+                    LineHeight = "1.1",
+                    LetterSpacing = "-0.02em"
                 },
 
                 H2 = new H2Typography
