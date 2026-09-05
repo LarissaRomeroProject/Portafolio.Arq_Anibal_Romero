@@ -1,0 +1,80 @@
+﻿@inherits LayoutComponentBase
+@using MudBlazor
+@using Portafolio.Arq_Anibal_Romero.Themes
+
+<MudThemeProvider Theme="@ArquitectoTheme.LightTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+
+    <MudAppBar Elevation="0">
+
+        <MudIconButton Icon="@Icons.Material.Filled.Menu"
+                       Edge="Edge.Start"
+                       Color="Color.Dark"
+                       OnClick="DrawerToggle" />
+
+        @* <MudSpacer /> *@
+
+        <MudText Color="Color.Dark" Typo =" Typo.h5">
+            <b>ARQ. ANIBAL ROMERO</b>
+        </MudText>
+
+        <MudSpacer />
+
+    </MudAppBar>
+    
+    <MudDrawer @bind-Open="_drawerOpen"
+               Variant="DrawerVariant.Responsive"
+               Anchor="Anchor.Start"
+               Elevation="0">
+        
+        <MudNavMenu Class="drawer-nav" Style="top:70px">
+            <MudText Typo="Typo.h5" Class="px-4"></MudText>
+            
+            <MudNavLink  Href="/"
+                        Match="NavLinkMatch.All"
+                        Icon="@Icons.Material.Filled.Home">
+                Inicio
+            </MudNavLink>
+
+            <MudNavLink Href="/proyectos"
+                        Icon="@Icons.Material.Filled.Architecture">
+                Proyectos
+            </MudNavLink>
+
+            <MudNavLink Href="/sobre-mi"
+                        Icon="@Icons.Material.Filled.Person">
+                Sobre mí
+            </MudNavLink>
+
+            <MudNavLink Href="/servicios"
+                        Icon="@Icons.Material.Filled.DesignServices">
+                Servicios
+            </MudNavLink>
+
+            <MudNavLink Href="/contacto"
+                        Icon="@Icons.Material.Filled.Mail">
+                Contacto
+            </MudNavLink>
+
+        </MudNavMenu>
+
+    </MudDrawer>
+
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+
+</MudLayout>
+
+@code
+{
+    private bool _drawerOpen = true;
+
+    private void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}

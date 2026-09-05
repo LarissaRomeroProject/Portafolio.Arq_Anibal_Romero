@@ -1,0 +1,50 @@
+﻿@page "/"
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="hero-container">
+
+    <MudGrid AlignItems="AlignItems.Center" Class="hero-section">
+
+        <MudItem xs="12" md="6">
+
+            <div class="hero-content">
+
+                <MudText Typo="Typo.h2" Class="hero-title">
+                    Diseño Arquitectónico Moderno
+                </MudText>
+
+                <MudText Typo="Typo.body1" Class="hero-description">
+                    Creamos espacios elegantes, funcionales y contemporáneos
+                    que transforman la experiencia de vivir y trabajar.
+                </MudText>
+
+                <div class="hero-buttons">
+
+                    <MudButton Href="/proyecto" Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               Size="Size.Large">
+                        Ver proyectos
+                    </MudButton>
+
+                    <MudButton Href="/contacto" Variant="Variant.Outlined"
+                               Color="Color.Primary"
+                               Size="Size.Large">
+                        Contactar
+                    </MudButton>
+
+                </div>
+
+            </div>
+
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+
+            <img src="images/arquitectura.jpeg"
+                 alt="Proyecto arquitectónico"
+                 class="hero-image" />
+
+        </MudItem>
+
+    </MudGrid>
+
+</MudContainer>
