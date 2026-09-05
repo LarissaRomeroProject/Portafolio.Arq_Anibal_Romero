@@ -140,8 +140,6 @@ code {
 .hero-title {
     margin-bottom: 24px;
     overflow-wrap: break-word;
-    word-break: break-word;
-    hyphens: auto;
 }
 
 .hero-description {
